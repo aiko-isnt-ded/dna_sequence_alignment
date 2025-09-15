@@ -143,10 +143,10 @@ def smith_waterman(seq1, seq2, match_score, mismatch_score, gap_penalty):
     Fin = time.perf_counter()
 
     # Imprimir los resultados
-    print(f"Tiempo total: {Fin - Inicio:.4f} segundos")
-    print("Puntuación máxima:", max_score)
-    print("Secuencia 1 alineada:", seq_ord)
-    print("Secuencia 2 alineada:", seq_ord2)
+    print("First Sequence Aligned:", seq_ord)
+    print("Second Sequence Aligned:", seq_ord2)
+    print("Alignment Score:", max_score)
+    print(f"Time Taken: {Fin - Inicio:.4f} seconds")
 
     # Matriz de confusión con el traceback
     fig, ax = plt.subplots(figsize=(10, 8))
@@ -175,6 +175,7 @@ if __name__ == "__main__":
     user_match = int(input("What is your match score? "))
     user_mismatch = int(input("What is your mismatch penalty? "))
     user_gap = int(input("What is your gap penalty? "))
+    print()
 
     if algo_choice == 0:
         algo_results = needleman_wunsch(first_sequence, second_sequence, user_match, user_mismatch, user_gap)
@@ -184,6 +185,8 @@ if __name__ == "__main__":
         print(f'Alignment Score: {algo_results[3]}')
         print(f"Time Taken: {algo_results[4]:.10f}")
     
-    else:
+    elif algo_choice == 1:
         smith_waterman(first_sequence, second_sequence, user_match, user_mismatch, user_gap)
 
+    else:
+        print('Unable to process your entry. Try again.')
