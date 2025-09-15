@@ -15,7 +15,7 @@ The `objective` of this repo is to:
 - **Execution time**: Measures the time taken to compute the alignment. 
 
 ## Usage
-After installation of the required python packages, run the program `alignment.py`.
+After installation of the required python packages [described on the `requirements.txt`], run the program **alignment.py**.
 
 You will be asked to:
 - Choose the algorithm: **Needleman-Wunsch** [0] or **Smith-Waterman** [1].
