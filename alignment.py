@@ -76,7 +76,7 @@ def needleman_wunsch(seq1, seq2, MATCH_SCORE, MISMATCH_PENALTY, GAP_PENALTY):
              [y + 0.5 for y in reversed(path_y)],
              linewidth = 2, color='green')
     
-    plt.title("Needleman-Wunsh")
+    plt.title("Needleman-Wunsch")
     plt.show()
 
     return nwm, sequence2, sequence1, score, time_taken
