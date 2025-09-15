@@ -149,17 +149,24 @@ def smith_waterman(seq1, seq2, match_score, mismatch_score, gap_penalty):
     print(f"Time Taken: {Fin - Inicio:.4f} seconds")
 
     # Matriz de confusión con el traceback
-    fig, ax = plt.subplots(figsize=(10, 8))
-    sns.heatmap(score_matrix, fmt='d', cmap='YlGnBu', xticklabels=['-']+list(seq2), yticklabels=['-']+list(seq1), ax=ax)
-    ax.plot([y+0.5 for y in reversed(path_y)],
-            [x+0.5 for x in reversed(path_x)],
-            lw=2, color='blue')
-    
-    ax.scatter(max_j+0.5, max_i+0.5, color='red', s=50, label='Inicio')
-    ax.set_title(f"Matriz Smith-Waterman (local alignment) - Score: {max_score} \n Match Score = {match_score}, Mismatch Penalty = {mismatch_score}, Gap Penalty = {gap_penalty}")
-    ax.set_ylabel("Secuencia 1")
-    ax.set_xlabel("Secuencia 2")
-    ax.legend(loc='upper right')
+    plt.figure(figsize=(10, 8))
+    sns.heatmap(score_matrix,
+                fmt='d',
+                cmap='YlGnBu',
+                xticklabels=['-']+list(seq2),
+                yticklabels=['-']+list(seq1))
+
+    # Camino del traceback
+    plt.plot([y+0.5 for y in reversed(path_y)],
+             [x+0.5 for x in reversed(path_x)],
+             lw=2, color='blue')
+
+    # Punto de inicio
+    plt.scatter(max_j+0.5, max_i+0.5, color='red', s=50, label='Inicio')
+    plt.title(f"Matriz Smith-Waterman (local alignment) - Score: {max_score} \n Match Score = {match_score}, Mismatch Penalty = {mismatch_score}, Gap Penalty = {gap_penalty}")
+    plt.ylabel("Secuencia 1")
+    plt.xlabel("Secuencia 2")
+    plt.legend(loc='upper right')
     plt.show()
 
     return seq_ord, seq_ord2, max_score, score_matrix # Esto es solo si se quiere almacenar el valor en algún lado :)
