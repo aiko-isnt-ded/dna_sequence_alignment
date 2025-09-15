@@ -76,7 +76,7 @@ def needleman_wunsch(seq1, seq2, MATCH_SCORE, MISMATCH_PENALTY, GAP_PENALTY):
              [y + 0.5 for y in reversed(path_y)],
              linewidth = 2, color='green')
     
-    plt.title("Needleman-Wunsch")
+    plt.title(f"Needleman-Wunsch - SCORE = {score}, \n Match Score = {MATCH_SCORE}, Mismatch Penalty = {MISMATCH_PENALTY}, Gap Penalty = {GAP_PENALTY}")
     plt.show()
 
     return nwm, sequence2, sequence1, score, time_taken
@@ -156,7 +156,7 @@ def smith_waterman(seq1, seq2, match_score, mismatch_score, gap_penalty):
             lw=2, color='blue')
     
     ax.scatter(max_j+0.5, max_i+0.5, color='red', s=50, label='Inicio')
-    ax.set_title("Matriz Smith-Waterman (alineamiento local)")
+    ax.set_title(f"Matriz Smith-Waterman (alineamiento local) - Score: {max_score} \n Match Score = {match_score}, Mismatch Penalty = {mismatch_score}, Gap Penalty = {gap_penalty}")
     ax.set_ylabel("Secuencia 1")
     ax.set_xlabel("Secuencia 2")
     ax.legend(loc='upper right')
