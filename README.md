@@ -14,7 +14,7 @@ The `objective` of this repo is to:
 - **Visual output**: Heatmaps of the scoring matrix with the optimal alignment path plotted.  
 - **Execution time**: Measures the time taken to compute the alignment. 
 
-## Usage
+## Usage .py
 After installation of the required python packages [described on the `requirements.txt`], run the program **alignment.py**.
 
 You will be asked to:
@@ -23,5 +23,8 @@ You will be asked to:
 - Input the **scoring parameters**: match score, mismatch penalty, and gap penalty
 
 The program will return the `aligned sequences`, `score`, `computation time` and `heatmap`.
+
+## Usage jupyter-notebook
+For personal use, we recommend running the .py file. This notebook was created mainly to visualize the 40+ graphs easily, without saving all images to a folder.
 
     ><(((('>
